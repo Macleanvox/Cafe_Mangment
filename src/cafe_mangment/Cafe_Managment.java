@@ -3,12 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cafe_mangment;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.awt.Color;
+import java.util.Random;
+import java.text.SimpleDateFormat;
 
 /**
  *
  * @author GOD
  */
 public class Cafe_Managment extends javax.swing.JFrame {
+    double[] drink = new double[5];
+     double[] cakes = new double[5];
+       double[] cost = new double[3];
+       double[] i = new double[10];
 
     /**
      * Creates new form Cafe_Managment
@@ -28,25 +37,51 @@ public class Cafe_Managment extends javax.swing.JFrame {
 
         jPanel7 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        chCcake = new javax.swing.JCheckBox();
+        chEggbubs = new javax.swing.JCheckBox();
+        chCupcake = new javax.swing.JCheckBox();
+        chBonda = new javax.swing.JCheckBox();
+        chVada = new javax.swing.JCheckBox();
+        jTextccake = new javax.swing.JTextField();
+        jTextebubs = new javax.swing.JTextField();
+        jTextcupcake = new javax.swing.JTextField();
+        jTextBonda = new javax.swing.JTextField();
+        jTextvada = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        chCoffee = new javax.swing.JCheckBox();
+        chTea = new javax.swing.JCheckBox();
+        chBtea = new javax.swing.JCheckBox();
+        chFtea = new javax.swing.JCheckBox();
+        chCappuccino = new javax.swing.JCheckBox();
+        jTexttea = new javax.swing.JTextField();
+        jTextCoffee = new javax.swing.JTextField();
+        jTextbtea = new javax.swing.JTextField();
+        jTextcappucino = new javax.swing.JTextField();
+        jTextFtea = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        total = new javax.swing.JButton();
+        receipt = new javax.swing.JButton();
+        Reset = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldstot = new javax.swing.JTextField();
+        jTextFieldtax = new javax.swing.JTextField();
+        jTextFieldtot = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextcostdr = new javax.swing.JTextField();
+        jTextcostcakes = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -65,47 +100,138 @@ public class Cafe_Managment extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
-        jCheckBox1.setText("jCheckBox1");
+        chCcake.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chCcake.setText("Coffee cake");
+        chCcake.setToolTipText("");
+        chCcake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chCcakeActionPerformed(evt);
+            }
+        });
 
-        jCheckBox2.setText("jCheckBox2");
+        chEggbubs.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chEggbubs.setText("Egg bubs");
+        chEggbubs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chEggbubsActionPerformed(evt);
+            }
+        });
 
-        jCheckBox3.setText("jCheckBox3");
+        chCupcake.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chCupcake.setText("Cup cake");
+        chCupcake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chCupcakeActionPerformed(evt);
+            }
+        });
 
-        jCheckBox4.setText("jCheckBox4");
+        chBonda.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chBonda.setText("Bonda");
+        chBonda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chBondaActionPerformed(evt);
+            }
+        });
 
-        jCheckBox5.setText("jCheckBox5");
+        chVada.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chVada.setText("vada");
+        chVada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chVadaActionPerformed(evt);
+            }
+        });
+
+        jTextccake.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextccake.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextccake.setText("0");
+        jTextccake.setToolTipText("");
+        jTextccake.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+        jTextccake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextccakeActionPerformed(evt);
+            }
+        });
+
+        jTextebubs.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextebubs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextebubs.setText("0");
+        jTextebubs.setToolTipText("");
+        jTextebubs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+
+        jTextcupcake.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextcupcake.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextcupcake.setText("0");
+        jTextcupcake.setToolTipText("");
+        jTextcupcake.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+
+        jTextBonda.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextBonda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextBonda.setText("0");
+        jTextBonda.setToolTipText("");
+        jTextBonda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+
+        jTextvada.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextvada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextvada.setText("0");
+        jTextvada.setToolTipText("");
+        jTextvada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(chVada, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextvada, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(chBonda, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextBonda, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(chCupcake, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextcupcake, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(chEggbubs, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(jTextebubs, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(chCcake)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextccake, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addComponent(jCheckBox1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chCcake)
+                    .addComponent(jTextccake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chEggbubs)
+                    .addComponent(jTextebubs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chCupcake)
+                    .addComponent(jTextcupcake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chBonda)
+                    .addComponent(jTextBonda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chVada)
+                    .addComponent(jTextvada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 200, 180));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 290, 230));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
@@ -133,99 +259,297 @@ public class Cafe_Managment extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
-        jCheckBox6.setText("Coffee");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        chCoffee.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chCoffee.setText("Coffee");
+        chCoffee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                chCoffeeActionPerformed(evt);
             }
         });
 
-        jCheckBox7.setText("Tea");
-
-        jCheckBox8.setText("Bubble tea");
-
-        jCheckBox9.setText("filter tea");
-
-        jCheckBox10.setText("Capacciono");
-        jCheckBox10.addActionListener(new java.awt.event.ActionListener() {
+        chTea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chTea.setText("Tea");
+        chTea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox10ActionPerformed(evt);
+                chTeaActionPerformed(evt);
             }
         });
+
+        chBtea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chBtea.setText("Bubble tea");
+        chBtea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chBteaActionPerformed(evt);
+            }
+        });
+
+        chFtea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chFtea.setText("filter tea");
+        chFtea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chFteaActionPerformed(evt);
+            }
+        });
+
+        chCappuccino.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        chCappuccino.setText("cappuccino");
+        chCappuccino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chCappuccinoActionPerformed(evt);
+            }
+        });
+
+        jTexttea.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTexttea.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTexttea.setText("0");
+        jTexttea.setToolTipText("");
+        jTexttea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+        jTexttea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextteaActionPerformed(evt);
+            }
+        });
+
+        jTextCoffee.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextCoffee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextCoffee.setText("0");
+        jTextCoffee.setToolTipText("");
+        jTextCoffee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+        jTextCoffee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextCoffeeActionPerformed(evt);
+            }
+        });
+
+        jTextbtea.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextbtea.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextbtea.setText("0");
+        jTextbtea.setToolTipText("");
+        jTextbtea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+
+        jTextcappucino.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextcappucino.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextcappucino.setText("0");
+        jTextcappucino.setToolTipText("");
+        jTextcappucino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+        jTextcappucino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextcappucinoActionPerformed(evt);
+            }
+        });
+
+        jTextFtea.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextFtea.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFtea.setText("0");
+        jTextFtea.setToolTipText("");
+        jTextFtea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCheckBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(191, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(chCoffee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jTextCoffee, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chBtea)
+                            .addComponent(chCappuccino)
+                            .addComponent(chTea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextcappucino, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTexttea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextbtea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(chFtea, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextFtea, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(43, 43, 43))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jCheckBox6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox10)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chCoffee)
+                    .addComponent(jTextCoffee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chTea)
+                    .addComponent(jTexttea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chBtea)
+                    .addComponent(jTextbtea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chFtea)
+                    .addComponent(jTextFtea, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextcappucino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chCappuccino))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 300, 180));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 320, 230));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
-        jButton1.setText("jButton1");
+        total.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        total.setText("Total");
+        total.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalActionPerformed(evt);
+            }
+        });
+
+        receipt.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        receipt.setText("Receipt");
+        receipt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                receiptActionPerformed(evt);
+            }
+        });
+
+        Reset.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
+
+        exit.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        exit.setText("Exit");
+        exit.setToolTipText("");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(receipt, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jButton1)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(receipt)
+                    .addComponent(Reset))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exit)
+                    .addComponent(total))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 420, 230, 60));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 460, 340, 100));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Tax");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Sub total");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Total");
+
+        jTextFieldstot.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextFieldstot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldstot.setText("0");
+        jTextFieldstot.setToolTipText("");
+        jTextFieldstot.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+
+        jTextFieldtax.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextFieldtax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldtax.setText("0");
+        jTextFieldtax.setToolTipText("");
+        jTextFieldtax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+        jTextFieldtax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldtaxActionPerformed(evt);
+            }
+        });
+
+        jTextFieldtot.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextFieldtot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldtot.setText("0");
+        jTextFieldtot.setToolTipText("");
+        jTextFieldtot.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 522, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)
+                        .addComponent(jTextFieldtax, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(jTextFieldstot, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61)
+                        .addComponent(jTextFieldtot, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))
+                .addGap(41, 41, 41))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextFieldtax, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextFieldstot, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(42, 42, 42))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jTextFieldtot, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 530, 170));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 310, 230));
 
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -235,29 +559,349 @@ public class Cafe_Managment extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 220, 300));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 340, 350));
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("Cost of drinks");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setText("Service charge");
+
+        jTextcostdr.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextcostdr.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextcostdr.setText("0");
+        jTextcostdr.setToolTipText("");
+        jTextcostdr.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+        jTextcostdr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextcostdrActionPerformed(evt);
+            }
+        });
+
+        jTextcostcakes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextcostcakes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextcostcakes.setText("0");
+        jTextcostcakes.setToolTipText("");
+        jTextcostcakes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+        jTextcostcakes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextcostcakesActionPerformed(evt);
+            }
+        });
+
+        jTextField6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField6.setText("0");
+        jTextField6.setToolTipText("");
+        jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 2));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("Cost of cakes");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField6))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextcostdr, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                            .addComponent(jTextcostcakes))))
+                .addGap(35, 35, 35))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextcostdr, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextcostcakes, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 280, 230));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    private void chCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chCoffeeActionPerformed
+               if(chCoffee.isSelected()){
+        double ctotal=Double.parseDouble(jTextcostdr.getText()); 
+        double count_coffee=Double.parseDouble(jTextCoffee.getText()); 
+        double coffeeprice=8;
 
-    private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
+            i[0]=(coffeeprice*count_coffee)+ctotal;
+            String pDrink = String.format("%.2f", i[0]);
+            jTextcostdr.setText(pDrink );          
+        }
+      
+    }//GEN-LAST:event_chCoffeeActionPerformed
+
+    private void chCappuccinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chCappuccinoActionPerformed
+       if(chCappuccino.isSelected()){
+        double ctotal=Double.parseDouble(jTextcostdr.getText()); 
+        double count_cappuccino=Double.parseDouble(jTextCoffee.getText()); 
+        double cappuccinoprice=40;
+
+            i[0]=(cappuccinoprice*count_cappuccino)+ctotal;
+            String pDrink = String.format("%.2f", i[0]);
+            jTextcostdr.setText(pDrink );          
+        }
+    }//GEN-LAST:event_chCappuccinoActionPerformed
+
+    private void jTextcostcakesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextcostcakesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox10ActionPerformed
+    }//GEN-LAST:event_jTextcostcakesActionPerformed
+
+    private void chCcakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chCcakeActionPerformed
+if(chCcake.isSelected()){
+    double cake_total=Double.parseDouble(jTextcostcakes.getText());
+    double count_coffeecake=Double.parseDouble(jTextccake.getText());
+    double coffecake_price=10;
+    i[1]=(count_coffeecake*coffecake_price)+cake_total;
+    String pCake = String.format("%.2f", i[1]);
+    jTextcostcakes.setText(pCake);
+}        
+    }//GEN-LAST:event_chCcakeActionPerformed
+
+    private void chEggbubsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chEggbubsActionPerformed
+        if(chEggbubs.isSelected()){
+    double cake_total=Double.parseDouble(jTextcostcakes.getText());
+    double count_eggbubs=Double.parseDouble(jTextebubs.getText());
+    double eggbubs_price=10;
+    i[1]=(count_eggbubs*eggbubs_price)+cake_total;
+    String pCake = String.format("%.2f", i[1]);
+    jTextcostcakes.setText(pCake);
+}  
+    }//GEN-LAST:event_chEggbubsActionPerformed
+
+    private void jTextteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextteaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextteaActionPerformed
+
+    private void jTextcostdrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextcostdrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextcostdrActionPerformed
+
+    private void totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+        
+          jTextCoffee.setText("0");
+       jTexttea.setText("0");
+       jTextbtea.setText("0");
+       jTextFtea.setText("0");
+       jTextcappucino.setText("0");
+       jTextccake.setText("0");
+       jTextebubs.setText("0");
+       jTextcupcake.setText("0");
+       jTextBonda.setText("0");
+       jTextvada.setText("0");
+       jTextcostdr.setText("0");
+       jTextcostcakes.setText("0");
+       jTextField6.setText("0");
+       jTextFieldtax.setText("0");
+       jTextFieldstot.setText("0");
+       jTextFieldtot.setText("0");
+       jTextArea1.setText(null);
+       chCcake.setSelected(false);
+       chEggbubs.setSelected(false);
+       chCupcake.setSelected(false);
+       chBonda.setSelected(false);
+       chVada.setSelected(false);
+       chCoffee.setSelected(false);
+       chTea.setSelected(false);
+       chBtea.setSelected(false);
+       chFtea.setSelected(false);
+       chCappuccino.setSelected(false);
+       
+    }//GEN-LAST:event_ResetActionPerformed
+
+    private void receiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptActionPerformed
+drink[0]=Double.parseDouble(jTextCoffee.getText());   
+drink[1]=Double.parseDouble(jTexttea.getText());  
+drink[2]=Double.parseDouble(jTextbtea.getText());  
+drink[3]=Double.parseDouble(jTextFtea.getText());  
+drink[4]=Double.parseDouble(jTextcappucino.getText());  
+cakes[0]=Double.parseDouble(jTextccake.getText()); 
+cakes[1]=Double.parseDouble(jTextebubs.getText()); 
+cakes[2]=Double.parseDouble(jTextcupcake.getText()); 
+cakes[3]=Double.parseDouble(jTextBonda.getText()); 
+cakes[4]=Double.parseDouble(jTextvada.getText()); 
+
+cost[0]=Double.parseDouble(jTextFieldtax.getText());
+cost[1]=Double.parseDouble(jTextFieldstot.getText());
+cost[2]=Double.parseDouble(jTextFieldtot.getText());
+
+double totaldrink=drink[0]+drink[1]+drink[2]+drink[3]+drink[4];
+/*
+Random number for bill refernce
+*/
+int refs;
+refs = 1325+(int)(Math.random()*4238);
+int ref=(refs);
+/*
+To get date and time for receipt printing
+*/
+Calendar timer =Calendar.getInstance();
+timer.getTime();
+SimpleDateFormat tTime = new SimpleDateFormat("HH:MM:SS");
+tTime.format(timer.getTime());
+SimpleDateFormat Tdate = new SimpleDateFormat("dd-MM-YYYY");
+Tdate.format(timer.getTime());
+
+
+jTextArea1.append("\t\n Mac's Cafe:\n\n"+
+        "Billno: "+ref+
+        "\n================================\t\t"+
+        "\nCoffee:\t\t"+drink[0]+
+        "\nTea:\t\t"+drink[1]+
+        "\nBubble tea:\t\t"+drink[2]+
+        "\nFilter tea:\t\t"+drink[3]+
+        "\nCappucino:\t\t"+drink[4]+
+        "\n================================\t\t"+
+        "\nCoffeecake:\t\t"+cakes[0]+
+        "\nEgg bubs:\t\t"+cakes[1]+
+        "\nCup cake:\t\t"+cakes[2]+
+        "\nBonda:\t\t"+cakes[3]+
+        "\nVada:\t\t"+cakes[4]+
+        "\n================================\t\t"+
+              "\nTax:\t\t"  +cost[0]+
+                 "\nSub Total:\t\t"  +cost[1]+
+                 "\nTotal:\t\t"  +cost[2]+
+         "\n================================\t\t"+
+        "\nTime: "+ tTime.format(timer.getTime())+
+        "\nDate: "+ Tdate.format(timer.getTime()) +
+        "\n\nThank you"
+        );
+
+    }//GEN-LAST:event_receiptActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void jTextCoffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCoffeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextCoffeeActionPerformed
+
+    private void jTextccakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextccakeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextccakeActionPerformed
+
+    private void jTextFieldtaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldtaxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldtaxActionPerformed
+
+    private void jTextcappucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextcappucinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextcappucinoActionPerformed
+
+    private void chTeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chTeaActionPerformed
+ if(chTea.isSelected()){
+        double ctotal=Double.parseDouble(jTextcostdr.getText()); 
+        double count_tea=Double.parseDouble(jTexttea.getText()); 
+        double teaprice=10;
+
+            i[0]=(teaprice*count_tea)+ctotal;
+            String pDrink = String.format("%.2f", i[0]);
+            jTextcostdr.setText(pDrink );          
+        }        
+    }//GEN-LAST:event_chTeaActionPerformed
+
+    private void chBteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chBteaActionPerformed
+      if(chBtea.isSelected()){
+        double ctotal=Double.parseDouble(jTextcostdr.getText()); 
+        double count_Btea=Double.parseDouble(jTexttea.getText()); 
+        double Bteaprice=11;
+
+            i[0]=(Bteaprice*count_Btea)+ctotal;
+            String pDrink = String.format("%.2f", i[0]);
+            jTextcostdr.setText(pDrink );          
+        }      
+    }//GEN-LAST:event_chBteaActionPerformed
+
+    private void chFteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chFteaActionPerformed
+        if(chFtea.isSelected()){
+        double ctotal=Double.parseDouble(jTextcostdr.getText()); 
+        double count_Ftea=Double.parseDouble(jTextFtea.getText()); 
+        double Fteaprice=15;
+
+            i[0]=(Fteaprice*count_Ftea)+ctotal;
+            String pDrink = String.format("%.2f", i[0]);
+            jTextcostdr.setText(pDrink );          
+        }   
+    }//GEN-LAST:event_chFteaActionPerformed
+
+    private void chCupcakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chCupcakeActionPerformed
+              if(chCupcake.isSelected()){
+    double cake_total=Double.parseDouble(jTextcostcakes.getText());
+    double count_cupcake=Double.parseDouble(jTextcupcake.getText());
+    double cupcake_price=10;
+    i[1]=(count_cupcake*cupcake_price)+cake_total;
+    String pCake = String.format("%.2f", i[1]);
+    jTextcostcakes.setText(pCake);
+} 
+    }//GEN-LAST:event_chCupcakeActionPerformed
+
+    private void chBondaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chBondaActionPerformed
+                   if(chBonda.isSelected()){
+    double cake_total=Double.parseDouble(jTextcostcakes.getText());
+    double count_bonda=Double.parseDouble(jTextBonda.getText());
+    double bonda_price=10;
+    i[1]=(count_bonda*bonda_price)+cake_total;
+    String pCake = String.format("%.2f", i[1]);
+    jTextcostcakes.setText(pCake);
+} 
+    }//GEN-LAST:event_chBondaActionPerformed
+
+    private void chVadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chVadaActionPerformed
+                           if(chVada.isSelected()){
+    double cake_total=Double.parseDouble(jTextcostcakes.getText());
+    double count_vada=Double.parseDouble(jTextvada.getText());
+    double vada_price=10;
+    i[1]=(count_vada*vada_price)+cake_total;
+    String pCake = String.format("%.2f", i[1]);
+    jTextcostcakes.setText(pCake);
+} 
+    }//GEN-LAST:event_chVadaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -295,18 +939,25 @@ public class Cafe_Managment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JButton Reset;
+    private javax.swing.JCheckBox chBonda;
+    private javax.swing.JCheckBox chBtea;
+    private javax.swing.JCheckBox chCappuccino;
+    private javax.swing.JCheckBox chCcake;
+    private javax.swing.JCheckBox chCoffee;
+    private javax.swing.JCheckBox chCupcake;
+    private javax.swing.JCheckBox chEggbubs;
+    private javax.swing.JCheckBox chFtea;
+    private javax.swing.JCheckBox chTea;
+    private javax.swing.JCheckBox chVada;
+    private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -314,7 +965,26 @@ public class Cafe_Managment extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextBonda;
+    private javax.swing.JTextField jTextCoffee;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextFieldstot;
+    private javax.swing.JTextField jTextFieldtax;
+    private javax.swing.JTextField jTextFieldtot;
+    private javax.swing.JTextField jTextFtea;
+    private javax.swing.JTextField jTextbtea;
+    private javax.swing.JTextField jTextcappucino;
+    private javax.swing.JTextField jTextccake;
+    private javax.swing.JTextField jTextcostcakes;
+    private javax.swing.JTextField jTextcostdr;
+    private javax.swing.JTextField jTextcupcake;
+    private javax.swing.JTextField jTextebubs;
+    private javax.swing.JTextField jTexttea;
+    private javax.swing.JTextField jTextvada;
+    private javax.swing.JButton receipt;
+    private javax.swing.JButton total;
     // End of variables declaration//GEN-END:variables
 }
